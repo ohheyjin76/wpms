@@ -1,0 +1,19 @@
+{
+  "name": "wpms",
+  "homepage": "https://github.com/wcmskorea/wpms",
+  "authors": [
+    "Sung Joon",
+    "Lee <wcmskorea@gmail.com>"
+  ],
+  "description": "web project management system",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/public/bower",
+    "test",
+    "tests"
+  ]
+}
