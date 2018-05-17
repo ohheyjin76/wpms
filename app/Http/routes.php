@@ -12,38 +12,13 @@
 */
 
 Route::get('/', 'IndexController@index');
-
-Route::resource('posts', 'PostsController');
-Route::resource('posts.comments', 'PostsCommentController');
-
-Route::get('auth', function(){
-	$credentials = [
-		'email' => 'jone@gmail.com',
-		'password' => 'password'
-	];
-
-	if(! Auth::attempt($credentials)) {
-		return 'Incorrect username or password combination';
-	}
-
-	return redirect('protected');
-});
-
-Route::get('auth/logout', function(){
-	Auth::logout();
-	return 'See you again~';
-});
-
-Route::get('protected', [
-	'middleware' => 'auth',
-	function(){
-		return 'Welcome back, ' . Auth::user()->name;
-	}
-]);
-
-//Route::get('home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('admin', function() {
+	return view('admin');
+});
